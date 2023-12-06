@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Explore Page - Prepr Network</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <!-- PreprLabs Logo -->
+      <a href="#" class="lighteffect">
+        <img
+          src="https://d3f06rtlkr354b.cloudfront.net/public/front/img/logoNew.png"
+          class="preprlabslogo"
+          alt="preprlogo"
+        />
+      </a>
+      <!-- Navigation Tabs -->
+      <a href="#" class="w3-mobile">Explore</a>
+      <!-- Dropdown Userboard -->
+      <div class="w3-container w3-dropdown-hover">
+        <p class="w3-mobile" style="color: #555;">Dashboard</p>
+        <div class="w3-dropdown-content">
+          <a href="#" class="">User dashboard</a>
+        </div>
+      </div>
+      <a href="#" class="w3-mobile">My Labs</a>
+      <a href="#" class="w3-mobile">My Challenges</a>
+      <a href="#" class="w3-mobile">My Projects</a>
+      <a href="#" class="w3-mobile">Career Explorer</a>
+      <!-- Navigation Logos -->
+      <a href="#">
+        <img
+          style="width: 27px; height: 27px;"
+          src="https://preprlabs.org/assets/images/header/bell-icon.svg"
+        />
+      </a>
+      <a href="#">
+        <img
+          style="width: 27px; height: 27px"
+          src="https://preprlabs.org/assets/images/header/inbox-icon.svg"
+        />
+      </a>
+      <a href="#">
+        <img
+          style="width: 27px; height: 27px"
+          src="https://preprlabs.org/assets/images/header/help-icon.svg"
+        />
+      </a>
+      <!-- Dark Mode  -->
+      <a href="#">
+        <img
+          src="darkmode.svg"
+          style="width: 27px; height: 27px; cursor: pointer"
+          onclick="darkMode()"
+        />
+      </a>
+      <script>
+        function darkMode() {
+          var element = document.body;
+          element.classList.toggle('dark-mode');
+        }
+      </script>
+
+      <!-- Mini SearchBar -->
+      <div class="w3-mobile ">
+        <input
+          type="text"
+          class="form-control typeahead w3-mobile"
+          id="mini_search"
+          placeholder="Search..."
+        />
+      </div>
+      <!-- Profile Navigation -->
+      <div class="w3-mobile">
+        
+      </div>
+    </nav>
+    <section id="explore" style="background-color: #f3f7fc; background-image: linear-gradient(to right, #d5ffc6, #7BD1F2);">
+      <div style="text-align: right">
+        <button onclick="closeexplorer()" style="background-color: transparent; border: none;">
+          <img
+          style="width: 1.5rem; cursor: pointer; margin: 1rem"
+          src="https://preprlabs.org/front/img/ic_round-clear.svg"
+          alt="close"
+          />
+        </button>       
+      </div>
+
+      <h1>Explore Your Interests</h1>
+      <p>
+        We’ll recommend content based on your interests we’ve listed here.
+        <br />
+        Feel free to add or remove topics to customize your experience !
+      </p>
+
+      <!-- Search Bar -->
+      <div style="margin: 2rem;" class="w3-mobile" >
+        <input
+          class="form-control"
+          type="search"
+          id="main_search"
+          placeholder="Search skills"
+        />
+      </div>
+      <!-- Recommendation Bar -->
+      <h3>Click an interest to narrow your recommendations</h3>
+    </section>
+    <section class="container">
+      <div class="explorer_section" style="align-items: center; display: flex;">
+        <div id="explorertab1" onclick="labsview()" class="explorer_component selected_explorer_component w3-card-2 w3-mobile" data-component="Labs" data-subcompoment="Labs" data-test="labtap" style="border-radius: 10px 0 0 10px;">
+          <h2 style="text-align: center;"> Labs</h2>
+        </div>
+        <div id="explorertab2"  onclick="challengesview()" class="explorer_component w3-card-2 w3-mobile" data-component="challenges" data-test="challengetab">
+          <h2 style="text-align: center;"> Challenges</h2>
+        </div>
+        <div id="explorertab3" onclick="resourcesview()" class="explorer_component w3-card-2 w3-mobile" data-component="resources" data-test="resourcetab">
+          <h2 style="text-align: center;"> Resources</h2>
+        </div>
+        <div id="explorertab4" onclick="projectsview()" class="explorer_component w3-card-2 w3-mobile" data-component="project" data-test="projectstab" style="border-radius: 0 10px 10px 0;">
+          <h2 style="text-align: center;"> Projects</h2>
+        </div>
+      </div>
+      <div class="bottomsection">
+        <div class="leftSection">
+          <div class="explorer_section">
+            <div id="component_id1" class="component_type selected_component_type" style="border-radius: 10px 10px 0 0;display: block;">
+              Labs
+            </div>
+            <div id="component_id2" class="component_type" style="border-radius: 0px 0px 10px 10px;display: block;">
+              Lab Programs
+            </div>
+            <div id="component_id3" class="component_type selected_component_type" style="border-radius: 10px 10px 0 0; display: none;">
+              Challenges
+            </div>
+            <div id="component_id4" class="component_type" style="border-radius: 0px 0px 10px 10px; display: none;">
+              Challenge Paths
+            </div>
+            <div id="component_id5" class="component_type selected_component_type" style="border-radius: 10px 10px 0 0; display: none;">
+              Resource Modules
+            </div>
+            <div id="component_id6" class="component_type" style="border-radius: 0px 0px 10px 10px; display: none;">
+              Resource Collections
+            </div>
+            <div id="component_id7" class="component_type" style="border-radius: 0px 0px 10px 10px; display: none;">
+              Resource Groups
+            </div>
+            
+          </div>
+          <div id= "explorefilter" class="filters_component" data-test="explorefilter"="">
+            <div class="Filter_header"> 
+              <h5 style="font-family: 'poppins',sans-serif; font-weight: 700; display:inline; margin-left: 0.5rem; margin-right: 0.5rem;"> Filters </h5> 
+              <a class="float_clear" style="text-decoration: underline; color: mediumvioletred; font-size: larger;" onclick="clearAllFilters()">Clear All</a>
+            </div>
+
+            <div class="filter_type" id="projects_filtertab1">
+              <button class="search-filter">
+                DURATION
+              </button>
+              <div class="durationTab">
+                <label class="custom-checkbox-container explore_filter"> Less than 2 Hours 
+                  <input name="Less than 2 Hours" type="checkbox" group="taggroup" data-test="Less than 2 Hours" value="169" id="169" aria-label="">
+                </label>
+                <label class="custom-checkbox-container explore_filter"> 2 - 4 Hours 
+                  <input name="2 - 4 Hours" type="checkbox" group="taggroup" data-test="2 - 4 Hours" value="170" id="170" aria-label="">
+                </label>
+                <label class="custom-checkbox-container explore_filter"> 4 - 8 Hours 
+                  <input name="4 - 8 Hours" type="checkbox" group="taggroup" data-test="4 - 8 Hours" value="171" id="171" aria-label="">
+                </label>
+                <label class="custom-checkbox-container explore_filter"> 1 - 2 Days
+                  <input name="1 - 2 Days" type="checkbox" group="taggroup" data-test="1 - 2 Days" value="172" id="172" aria-label="">
+                </label>
+                <label class="custom-checkbox-container explore_filter"> 3 - 5 Days 
+                  <input name="3 - 5 Days" type="checkbox" group="taggroup" data-test="3 - 5 Days" value="173" id="173" aria-label="">
+                </label>
+                <label class="custom-checkbox-container explore_filter"> 5 + Days 
+                  <input name="5 + Days" type="checkbox" group="taggroup" data-test="5 + Days" value="174" id="174" aria-label="">
+                </label>
+              </div>
+            </div>
+            <div class="filter_type" id="projects_filtertab2">
+              <div class="search-filter">
+                LEVEL
+              </div>
+              <div class="levelTab">
+                <label class="custom-checkbox-container explore_filter"> Beginner
+                  <input name="Beginner" type="checkbox" group="taggroup" data-test="Beginner">
+                </label>
+                <label class="custom-checkbox-container explore_filter"> Intermediate 
+                  <input name="Intermediate" type="checkbox" group="taggroup" data-test="Intermediate">
+                </label>
+                <label class="custom-checkbox-container explore_filter"> Advanced
+                  <input name="Advanced" type="checkbox" group="taggroup" data-test="Advanced">
+                </label>
+                <label class="custom-checkbox-container explore_filter"> Mixed
+                  <input name="Mixed" type="checkbox" group="taggroup" data-test="Mixed">
+                </label>
+              </div>
+            </div>
+            <div class="filter_type" id="projects_filtertab3">
+              <div class="search-filter">
+                ORGANIZATIONS
+              </div>
+              <div class="organizationTab">
+                <label class="custom-checkbox-container explore_filter"> Prepr
+                  <input name="Prepr" type="checkbox" group="taggroup" data-test="Prepr">
+                </label>
+                <label class="custom-checkbox-container explore_filter"> Linux Foundation 
+                  <input name="Linux Foundation" type="checkbox" group="taggroup" data-test="Linux Foundation">
+                </label>
+                <label class="custom-checkbox-container explore_filter"> Magnet
+                  <input name="Magnet" type="checkbox" group="taggroup" data-test="Magnet">
+                </label>
+                <label class="custom-checkbox-container explore_filter"> CertNexus
+                  <input name="CertNexus" type="checkbox" group="taggroup" data-test="CertNexus">
+                </label>
+                <label class="custom-checkbox-container explore_filter"> Ontario Chamber of Commerce
+                  <input name="Ontario Chamber of Commerce" type="checkbox" group="taggroup" data-test="Ontario Chamber of Commerce">
+                </label>
+                <label class="custom-checkbox-container explore_filter"> Youth Boost
+                  <input name="Youth Boost" type="checkbox" group="taggroup" data-test="Youth Boost">
+                </label>
+              </div>
+            </div>
+            <div class="filter_type" id="projects_filtertab4">
+              <div class="search-filter">
+                SKILLS
+              </div>
+              <div class="skillTab">
+                <div style="margin: 2rem;" class="w3-mobile" >
+                  <input
+                    class="form-control"
+                    type="search"
+                    id="mini_search"
+                    placeholder="Search skills"
+                  />
+                </div>
+                
+              </div>
+            </div>
+            <div class="filter_type" id="projects_filtertab5" style="display: none;">
+              <div class="search-filter">
+                STATUS
+              </div>
+              <div class="statusTab">
+                <label class="custom-checkbox-container explore_filter"> Open
+                  <input name="Open" type="checkbox" group="taggroup" data-test="Open">
+                </label>
+                <label class="custom-checkbox-container explore_filter"> Closed 
+                  <input name="Closed" type="checkbox" group="taggroup" data-test="Closed">
+                </label>
+                <label class="custom-checkbox-container explore_filter"> In Progress
+                  <input name="In Progress" type="checkbox" group="taggroup" data-test="In Progress">
+                </label>
+                <label class="custom-checkbox-container explore_filter"> Submitted
+                  <input name="Submitted" type="checkbox" group="taggroup" data-test="Submitted">
+                </label>
+              </div>
+            </div>
+            <script>
+              /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+              var dropdown = document.getElementsByClassName("search-filter");
+              var i;
+              
+              
+              for (i = 0; i < dropdown.length; i++) {
+                dropdown[i].addEventListener("click", function() {
+                  var dropdownContent = this.nextElementSibling;
+                  if (dropdownContent.style.display === "block") {
+                    dropdownContent.style.display = "none";
+                  } else {
+                    dropdownContent.style.display = "block";
+                  }
+                });
+              }
+            </script>
+          </div>
+        </div>
+        <div class="mainSection"> 
+          <div class="sortSearchSection">
+            <div class="row w3-card">
+              <div class="search">
+                <div style="padding: 1rem;">
+                  <input type="text" placeholder="Search...">
+                  <button>
+                    Search
+                  </button>
+                </div>
+              </div>
+              <div class="sortby">
+                <div style="padding: 1rem;">
+                  <p style="float: left;">Sort by </p>
+                  <select>
+                    <option value="name">Recently Added</option>
+                    <option value="date">Most Popular</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="explorer_box">
+            <div class="pageNumber" style="margin: 10px;">
+              <button class="w3-button " style="background-color: cadetblue;">
+                1
+              </button>
+            </div>
+            <div class="w3-card w3-container postlabs" id="postslabs">
+              <div class="w3-third">
+                <img>
+                <div class="">
+                  <logo class="likes">
+                  
+                  </logo>
+                  <logo class="shares">
+                    
+                  </logo>
+                </div>
+                <p> Hosted by <b> Prepr </b></p>
+              </div>
+              <div class="w3-twothirds">
+                <div class="postheader">
+                  <h4> Getting Started Lab For Employment Service Providers (ESP)</h4>
+                  <button class="w3-right">
+                    <i class="">+</i>
+                    Follow
+                  </button>
+                </div>
+                <div class="tags">
+                  <p> Public Lab Last update: 1 year ago Members: 27 Duration: None Level: None</p>
+                </div>
+                <div class="w3-text">
+                  <p>
+                    If you're here then you're a passionate employment service provider who’s constantly looking for new tools and concepts. We've prepared a series of Challenges just for you! The Challenges in this Lab are designed to help you learn how you can get the most out of our platform, get started today!
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="w3-card w3-container postchallenges" id="postschallenge">
+              <div class="w3-third">
+                <img>
+                <div class="">
+                  <logo class="likes">
+                  
+                  </logo>
+                  <logo class="shares">
+                    
+                  </logo>
+                  <logo class="views">
+                    
+                  </logo>
+                </div>
+                <p> Hosted by <b> Prepr </b></p>
+              </div>
+              <div class="w3-twothirds">
+                <div class="postheader">
+                  <h4> DTP & FUN - Team Business Innovation Challenge</h4>
+                </div>
+                <div class="tags">
+                  <p> <b> Private Challenge </b> Challenge deadline: <b> 12/01/2023 </b> Total submission: <b> 7 </b> Status <b> Closed </b></p>
+                  <p> Duration: <b> None </b> Level: <b> None</b></p>
+                </div>
+                <div class="w3-text">
+                  <p>
+                    How might we better support businesses around us? Businesses around the world have had to adapt over the last 3 years as the nature of sales has diversified and changed, and will need to continue to evolve to meet the realities of a post-pandemic world. Challenges abound across all aspects of organizations' business models, including operations, workforce, customer experience an...
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="w3-card w3-container postresources" id="postsresources">
+              <div class="w3-third">
+                <img>
+                <p> Hosted by <b> Prepr </b></p>
+              </div>
+              <div class="w3-twothirds">
+                <div class="postheader">
+                  <h4> Skills for Success - Team Project & Presentation Acceptance Criteria</h4>
+                </div>
+                <div class="tags">
+                  <p> <b> Status: open </b> Duration: <b> None </b> Level: <b> None </b></p>
+                </div>
+                <div class="w3-text">
+                  <p>
+                    This should help make clear what requirements are expected for your team's final team presentation/project! There are a LOT of 'coulds' in here to give you ideas and provide you with the flexibility to include more that the basics in your pitch. But the basics are also fine. We'll discuss!
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="w3-card w3-container postprojects" id="postsprojects">
+              <div class="w3-third">
+                <img>
+                <div class="">
+                  <logo class="likes">
+                  
+                  </logo>
+                  <logo class="shares">
+                    
+                  </logo>
+                  <logo class="views">
+                    
+                  </logo>
+                </div>
+              </div>
+              <div class="w3-twothirds">
+                <div class="postheader">
+                  <h4> Nileshana - Creating a Project </h4>
+                </div>
+                <div class="tags">
+                  <p> <b> Public </b> Associated Challenge: <b> Creating a Project</b></p>
+                </div>
+                <div class="w3-text">
+                  <p>
+                   
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+  </body>
+</html>
